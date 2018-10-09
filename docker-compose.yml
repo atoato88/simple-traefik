@@ -1,0 +1,10 @@
+version: '3'
+services:
+  router:
+    #build: .
+    image: traefik
+    ports:
+    - "80:80"
+    volumes:
+    - ./template/traefik.toml:/etc/traefik/traefik.toml
+    - /var/run/docker.sock:/var/run/docker.sock
