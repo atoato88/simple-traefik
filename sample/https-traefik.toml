@@ -11,16 +11,19 @@ logLevel = "DEBUG"
 [file]
 
 [entryPoints]
-  [entryPoints.http]
-  address = ":80"
-    [entryPoints.http.redirect]
-    entryPoint = "https"
+#  [entryPoints.http]
+#  address = ":80"
+#    [entryPoints.http.redirect]
+#    entryPoint = "https"
   [entryPoints.https]
   address = ":6443"
     [entryPoints.https.tls]
+#      [entryPoints.https.tls.ClientCA]
+#      files = ["/etc/traefik/ca.crt"]
+#      optional = false
 #      [[entryPoints.https.tls.certificates]]
-#      certFile = "integration/fixtures/https/snitest.com.cert"
-#      keyFile = "integration/fixtures/https/snitest.com.key"
+#      certFile = "/home/inou/admin.crt"
+#      keyFile = "/home/inou/admin.key"
 
 [api]
 
