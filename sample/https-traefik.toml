@@ -1,0 +1,31 @@
+[file]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+  address = ":6443"
+
+[api]
+
+[frontends]
+  [frontends.frontend1]
+  backend = "backend1"
+  entrypoints = ["https"]
+    #[frontends.frontend1.routes.test]
+    #rule = "Path:/test"
+
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers.server1]
+    url = "https://172.18.211.197:6443"
+    weight = 1
+    [backends.backend1.servers.server2]
+    url = "https://172.18.211.198:6443"
+    weight = 1
+    [backends.backend1.servers.server3]
+    url = "https://172.18.211.199:6443"
+    weight = 1
+
