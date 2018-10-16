@@ -19,8 +19,4 @@ sudo systemctl start traefik.service
 
 echo "Finish install."
 echo "For remove all files, run commands following."
-echo "sudo systemctl stop traefik.service"
-echo "sudo systemctl disable traefik.service"
-echo "sudo rm /usr/bin/traefik"
-echo "sudo rm -rf /etc/traefik"
-echo "sudo rm -f /etc/systemd/system/traefik.service"
+echo "./uninstall.sh"
